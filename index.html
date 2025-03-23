@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页 - 王科</title>
+    <style>
+        /* 头像布局样式 */
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .profile-info {
+            flex: 1;
+            width: 100%;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between; /* 分散对齐 */
+            gap: 20px;
+            margin: 12px 0;
+            width: 100%;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1; /* 等分宽度 */
+            min-width: 200px; /* 最小宽度保持对齐 */
+        }
+
+        .info-item span {
+            display: inline-block;
+            width: 80px; /* 固定标签宽度 */
+            color: #666;
+        }
+
+        /* 头像样式 */
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+
+        body {
+            font-family: '微软雅黑', sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f6fa;
+        }
+        /* 导航样式 */
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            background-color: #43cd1d;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .nav a {
+            color: rgb(11, 9, 9);
+            text-decoration: none;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+        .nav a:hover {
+            color: #686967;
+            transform: translateY(-2px);
+        }
+        /* 内容模块通用样式 */
+        .module {
+            background: white;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .module:hover {
+            transform: translateY(-5px);
+        }
+        /* 图片画廊样式 */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .image-caption {
+            padding: 1rem;
+            text-align: center;
+            background: #c6cdc6;
+        }
+/* 头像样式 */
+.avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 1rem auto;
+            border: 3px solid #2c3e50;
+            @media (max-width: 768px) {
+            }
+        }
+
+        /* 表单样式 */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+        button {
+            background: #3498db;
+            color: rgb(255, 255, 255);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <!-- 页头 -->
+    <header class="module">
+        <div class="header-content">
+            <img src="profile.jpg" alt="头像" class="avatar">
+            <div class="profile-info">
+                <h1 style="margin-bottom: 15px;">王科</h1>
+                <div class="info-row">
+                    <div class="info-item">
+                        <span>📛 姓名</span>
+                        <strong>王科</strong>
+                    </div>
+                    <div class="info-item">
+                        <span>🚻 性别</span>
+                        <strong>男</strong>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-item">
+                        <span>🏠 家乡</span>
+                        <strong>河南南阳</strong>
+                    </div>
+                    <div class="info-item">
+                        <span>📱 电话</span>
+                        <strong>13323684957</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="margin-top:15px;color:#666666;">华中农业大学 | 资源与环境专业研究生</p>
+    </header>
+
+    <!-- 导航菜单 -->
+    <nav class="nav">
+        <a href="#about">个人简介</a>
+        <a href="#edu">教育背景</a>
+        <a href="#hobby">兴趣爱好</a>
+        <a href="#contact">留言板</a>
+    </nav>
+    <!-- 个人简介模块 -->
+    <section id="about" class="module">
+        <h2>📝 个人简介</h2>
+        <p>环境污染修复者|作为深耕污染治理领域的一员，我专注土壤重金属污染修复研究，
+            尤其关注农田土壤中砷、镉、铅等有毒元素的治理难题。通过分析污染物在土壤与植物中的迁移规律，
+            探索植物与微生物协同净化的生态修复方案。目前致力于开发智能监测系统与环保修复材料（如生物炭），
+            力求构建从污染识别到精准修复的全链条技术体系，让受损土地重获生机，守护人与自然的健康平衡。</p>
+        </ul>
+    </section>
+
+    <!-- 教育背景模块 -->
+    <section id="edu" class="module">
+        <h2>🎓 教育背景</h2>
+        <div class="timeline">
+            <h3>河南财政金融学院 (2020-2024)</h3>
+            <p>环境科学 | 学士学位</p>
+            <p>主修课程：环境化学、环境监测、环境工程学、环境科学概论、水污染控制工程</p>
+            <h3>华中农业大学 (2024-至今)</h3>
+            <p>资源与环境专业 | 在读</p>
+            <p>主修课程：多元统计、环境界面研究法、环境工程专题</p>
+        </div>
+    </section>
+
+    <!-- 兴趣爱好模块 -->
+    <section class="content-section" id="hobbies">
+        <h2>我的爱好</h2>
+        <div class="image-gallery">
+            <div class="gallery-item">
+                <img src="images/reading.jpg" alt="阅读">
+                <div class="image-caption">在书海中寻找智慧</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/photography.jpg" alt="摄影">
+                <div class="image-caption">用镜头记录美好</div>
+            </div>
+            <div class="gallery-item">
+                <img src="images/hiking.jpg" alt="徒步">
+                <div class="image-caption">徒步探索自然之美</div>
+            </div>
+        </div>
+    </section>
+
+     <!-- 留言板 -->
+     <section class="content-section" id="contact">
+        <h2>留言互动</h2>
+        <form>
+            <textarea placeholder="在这里写下你想说的话..." rows="5"></textarea>
+            <button type="submit">发送留言</button>
+        </form>
+    </section>
+
+    <script>
+        // 图片悬停效果
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                item.style.transform = 'translateY(-5px)';
+            });
+            item.addEventListener('mouseleave', () => {
+                item.style.transform = 'translateY(0)';
+            });
+        });
+
+        // 平滑滚动效果
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // 表单提交提示
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('留言已提交，感谢你的互动！');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
